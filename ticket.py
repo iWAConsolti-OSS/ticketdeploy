@@ -1,8 +1,9 @@
 from atlassian import Jira
 import json
 import os
+import sys
 
-GET_TICKETS_TO_DEPLOY = 'project in (PROJECT) AND status = "Ready to Deploy" ORDER BY assignee'
+GET_TICKETS_TO_DEPLOY = 'project in (PROJECT) AND status = "In progress" ORDER BY assignee'
 
 
 class DeploymentTicket:
@@ -22,6 +23,9 @@ class DeploymentTicket:
     def getTickets(self):
         JQL = GET_TICKETS_TO_DEPLOY
         data = self.jira.jql(JQL)
+
+        if 'total' not in data:
+            sys.exit(data)
 
         if data['total'] > 0:
             print(self.getHeader(data))
