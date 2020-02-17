@@ -3,7 +3,7 @@ import json
 import os
 import sys
 
-GET_TICKETS_TO_DEPLOY = 'project in (PROJECT) AND status = "In progress" ORDER BY assignee'
+GET_TICKETS_TO_DEPLOY = os.getenv('TICKETS_TO_DEPLOY', False)
 
 
 class DeploymentTicket:
@@ -65,7 +65,7 @@ class DeploymentTicket:
                 assignee = currentAssignee
 
             body += '# {} {} \n'.format(record['key'],
-                                        record['fields']['summary'])
+                                        record['fields']['summary'].encode('utf-8', errors='ignore'))
 
         return body
 

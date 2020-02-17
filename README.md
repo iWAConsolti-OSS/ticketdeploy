@@ -16,6 +16,7 @@ https://confluence.atlassian.com/cloud/api-tokens-938839638.html?_ga=2.81595986.
     ATLASSSIAN_BASE_URI=https://myaccount.atlassian.net
     ATLASSIAN_USER=user
     ATLASSIAN_API_KEY=apiKey
+    TICKETS_TO_DEPLOY=query
 ```
 
 2. Install the required components
