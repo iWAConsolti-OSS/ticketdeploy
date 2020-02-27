@@ -31,17 +31,3 @@ https://confluence.atlassian.com/cloud/api-tokens-938839638.html?_ga=2.81595986.
     python main.py
 ``` 
 
-
-# Bitbucket API
-
-``` sh
-    curl -u user:passw \
-        -i -X GET https://api.bitbucket.org/internal/repositories/{org}/{repo}/environment_summaries/
-
-    curl -u user:passw \
-        -i -X GET https://api.bitbucket.org/internal/repositories/{org}/{repo}/jira-issues?exclude=29983d7&include=f3a53b9&fields=-type
-
-
-    curl -u user:passw \
-        -i -X GET https://api.bitbucket.org/2.0/repositories/
-```
